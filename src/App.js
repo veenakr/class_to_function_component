@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
 
-function App() {
+
+// code for challenge1
+
+// const App = () => {
+//   const [count, increaseCount] = useState(0);
+
+//   return (
+//     <div style={{ marginBottom: "50px" }}>
+//       <h2>Challenge 1</h2>
+//       <p>Count is: {count}</p>
+//       <button onClick={() => increaseCount(count + 1)}>Increase Count!</button>
+//     </div>
+//   );
+// }
+
+//code for challenge4
+
+const App = () => {
+  const [message, changeMessage] = useState("What's happening this week?")
+
+  useEffect(() => {
+    setTimeout(() => {
+      changeMessage("I only know it's gon be lit!!");
+    }, 5000);
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ marginBottom: "50px" }}>
+      <h2>Challenge 4</h2>
+      <p>Status: {message}</p>
     </div>
   );
 }
